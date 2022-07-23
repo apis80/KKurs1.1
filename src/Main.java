@@ -8,7 +8,6 @@ public class Main {
             if (employee.getSalaryStaff() > maxSalary) {
                 maxSalary = employee.getSalaryStaff();
                 result1 = employee;
-                System.out.println( "Макимальная зарплата" + maxSalary + result1);
             }
         }
         return result1;}
@@ -20,7 +19,6 @@ public class Main {
             if (employee.getSalaryStaff() < minSalary) {
                 minSalary = employee.getSalaryStaff();
                 result = employee;
-                System.out.println( "Минимальная зарплата" + minSalary + result);
             }
         }
         return result;
@@ -30,7 +28,6 @@ public class Main {
         for (Employee employee : employees) {
             sum += employee.getSalaryStaff();
         }
-        System.out.println("Сумма затрат на зарплаты в месяц = " + sum);
         return sum;
     }
     public static void typeAllStaff(Employee[] employees) {
@@ -39,9 +36,8 @@ public class Main {
         }
     }
 
-    public static void averageSalary(Employee[] employees) {
-        int sum = countStaffSalary(employees)/ employees.length;
-        System.out.println("Средняя зарплата = " + sum);
+    public static int averageSalary(Employee[] employees) {
+        return countStaffSalary(employees)/ employees.length;
     }
 
     public static void main(String[] args) {
@@ -53,11 +49,14 @@ public class Main {
             employee[4] = new Employee("Chizhov ivan Ivanovich", 67000, 5);
             employee[5] = new Employee("Smirnov ivan Ivanovich", 55000, 1);
             employee[6] = new Employee("Hrushov ivan Ivanovich", 98000, 2);
-            employee[7] = new Employee("Mechov ivan Ivanovich", 76000, 3);        employee[0] = new Employee("Piskunov ivan Ivanovich", 73000, 1);
+            employee[7] = new Employee("Mechov ivan Ivanovich", 76000, 3);
             employee[8] = new Employee("Sidorov ivan Ivanovich", 73000, 4);
             employee[9] = new Employee("Petrov ivan Ivanovich", 73000, 5 );
             System.out.println (Arrays.toString(employee));
-        System.out.println(findEmployeeWithMaxSalary();
+            System.out.println ( "сотрудник с самой большой зарплатой - " + findEmployeeWithMaxSalary(employee));
+            System.out.println ( "Сумма зарпдат всех сотрудников за месяц = " + countStaffSalary(employee));
+            System.out.println("Сотрудник с самой маленькой зарплатой -"  + findEmployeeWithMinSalary(employee));
+            System.out.println ("средняя зарплата = " + averageSalary(employee));
     }
         }
 
